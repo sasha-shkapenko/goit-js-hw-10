@@ -14,7 +14,7 @@ inputEl.addEventListener('input', debounce(onInputChange, DEBOUNCE_DELAY));
 
 function onInputChange(e) {
     outputClear();
-    if (e.target.value != '') {
+    if (e.target.value.trim() != '') {
         fetchCountries(e.target.value.trim())
             .then(renderHTML)
             .catch(error => {
